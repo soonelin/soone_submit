@@ -204,17 +204,6 @@ $article_id = system_CleanVars($_REQUEST, 'article_id', 0, 'int');
 
 switch ($op) {
 
-    // case "insert_article":
-
-    //     //檢查發布密碼是否與系統設定正確
-    //     if ($_POST['form_passwd'] == $xoopsModuleConfig['form_passwd']) {
-    //         $article_id = insert_article();
-    //         //redirect_header("index.php?op=show_article&article_id={$article_id}", 5, "發佈成功！");
-    //         redirect_header("index.php", 5, "發佈成功！等待管理者審核");
-    //     } else {
-    //         redirect_header("index.php", 5, "發佈失敗！密碼有錯誤!");
-    //     }
-    //     exit;
     case "insert_article":
         $article_id = insert_article();
         redirect_header("index.php", 5, "發佈成功！等待管理者審核");
