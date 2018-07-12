@@ -17,14 +17,10 @@ function show_grade_enable_stastic()
     //月份從07至隔年02月是上學期
     if (date('m')>=7 and date('m')<=12){
         $Year  = date('Y') ;
-        // $this_year_0701_stamp =  mktime(0, 0, 0, 8, 1, $Year-1);
-        // $next_year_0215_stamp =  mktime(0, 0, 0, 2, 15, $Year);
-        // $next_year_0301_stamp =  mktime(0, 0, 0, 2, 16, $Year);
-        // $next_year_0630_stamp =  mktime(0, 0, 0, 7, 31, $Year);
+
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
         $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 15, $Year+1));
-        // $next_year_0301 =  date("Y-m-d",mktime(0, 0, 0, 2, 16, $Year));
-        // $next_year_0630 =  date("Y-m-d",mktime(0, 0, 0, 7, 31, $Year));
+
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`enable`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `enable`='1' AND `action_date` 
@@ -40,14 +36,10 @@ function show_grade_enable_stastic()
 
     }elseif(date('m')>=1 AND date('m')<=2){
         $Year  = date('Y') ;
-        // $this_year_0701_stamp =  mktime(0, 0, 0, 8, 1, $Year-1);
-        // $next_year_0215_stamp =  mktime(0, 0, 0, 2, 15, $Year);
-        // $next_year_0301_stamp =  mktime(0, 0, 0, 2, 16, $Year);
-        // $next_year_0630_stamp =  mktime(0, 0, 0, 7, 31, $Year);
+ 
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year-1));
         $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 15, $Year));
-        // $next_year_0301 =  date("Y-m-d",mktime(0, 0, 0, 2, 16, $Year));
-        // $next_year_0630 =  date("Y-m-d",mktime(0, 0, 0, 7, 31, $Year));
+
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`enable`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `enable`='1' AND `action_date` 
