@@ -139,12 +139,6 @@ function show_grade_confirm_stastic()
     //月份從03至08月是下學期
     }elseif(date('m')>=3 AND date('m')<=8){
         $Year  = date('Y') ;
-        // $this_year_0701_stamp =  mktime(0, 0, 0, 8, 1, $Year);
-        // $next_year_0215_stamp =  mktime(0, 0, 0, 2, 15, $Year+1);
-        // $next_year_0301_stamp =  mktime(0, 0, 0, 2, 16, $Year+1);
-        // $next_year_0630_stamp =  mktime(0, 0, 0, 7, 31, $Year+1);
-        // $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 8, 1, $Year));
-        // $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 15, $Year+1));
         $next_year_0301 =  date("Y-m-d",mktime(0, 0, 0, 3, 1, $Year));
         $next_year_0630 =  date("Y-m-d",mktime(0, 0, 0, 7, 31, $Year));
         

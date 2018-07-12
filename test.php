@@ -26,13 +26,4 @@ function DateToPeriod()
 
 }
 
-// function show_article_sum()
-// {
 
-//     global $xoopsDB, $xoopsTpl;
-//     $tbl      = $xoopsDB->prefix('soone_submit');
-//     $sql      = "SELECT * FROM `{$tbl}` ";
-//     $result   = $xoopsDB->query($sql) or web_error($sql);
-//     $show_num = $xoopsDB->getRowsNum($result);
-//     $xoopsTpl->assign('show_article_sum', $show_num);
-// }
