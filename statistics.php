@@ -115,14 +115,10 @@ function show_grade_confirm_stastic()
     //月份從09至隔年02月是上學期
     if (date('m')>=9 OR date('m')<=2){
         $Year  = date('Y') ;
-        // $this_year_0701_stamp =  mktime(0, 0, 0, 8, 1, $Year-1);
-        // $next_year_0215_stamp =  mktime(0, 0, 0, 2, 15, $Year);
-        // $next_year_0301_stamp =  mktime(0, 0, 0, 2, 16, $Year);
-        // $next_year_0630_stamp =  mktime(0, 0, 0, 7, 31, $Year);
+
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 8, 1, $Year-1));
         $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 15, $Year));
-        // $next_year_0301 =  date("Y-m-d",mktime(0, 0, 0, 2, 16, $Year));
-        // $next_year_0630 =  date("Y-m-d",mktime(0, 0, 0, 7, 31, $Year));
+
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`confirm`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `confirm`='1' AND `action_date` 
@@ -170,18 +166,6 @@ function show_grade_confirm_stastic()
     $xoopsTpl->assign('con_date1', $con_date1);
     $xoopsTpl->assign('con_date2', $con_date2);
 }
-
-//累積所有文章
-// function show_article_sum()
-// { 
-
-//     global $xoopsDB, $xoopsTpl;
-//     $tbl      = $xoopsDB->prefix('soone_submit');
-//     $sql      = "SELECT * FROM `{$tbl}` ";
-//     $result   = $xoopsDB->query($sql) or web_error($sql);
-//     $show_num = $xoopsDB->getRowsNum($result);
-//     $xoopsTpl->assign('total', $show_num);
-// }
 
 
 //列出前五篇最新文章
