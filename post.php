@@ -95,13 +95,6 @@ function post_form($article_id){
     $article_id_form = $TadUpFiles->upform(false, "article_id", "");
     $form->addElement(new XoopsFormLabel('上傳圖片', $article_id_form), false);
 
-    //設定投稿密碼欄位
-    // $text = new XoopsFormText('投稿密碼', 'form_passwd', 40, 255, '');
-    // $text->setExtra("placeholder='請輸入投稿密碼'");
-    // $form->addElement($text, true);
-
-    //輸入驗證碼表單
-    // $form->addElement(new XoopsFormCaptcha ('請輸入驗證碼', 'xoopscaptcha', false));
     $Tray->addElement(new XoopsFormButton('', 'send', '送出', 'submit'));
     $Tray->addElement(new XoopsFormButton('', 'send', '清除', 'reset'));
     $form->addElement($Tray);
@@ -134,14 +127,7 @@ function edit_article($article_id)
     `action_date`='{$action_date}'
     WHERE `article_id` = '{$article_id}' ";
 
-    //資料庫新增文章之前進行驗證碼檢查
-    // xoops_load('captcha');
-    // $xoopsCaptcha = XoopsCaptcha::getInstance();
-    // $xoopsCaptcha->setConfig('skipmember' , false);
-    // if(!$xoopsCaptcha->verify()) {
-    //     redirect_header($_SERVER['PHP_SELF'], 5, $xoopsCaptcha->getMessage());
-    // }
-    
+   
     $xoopsDB->queryF($sql) or web_error($sql);
     
     //插入附件
@@ -176,14 +162,6 @@ function insert_article()
         ( `name`, `grade`, `class`, `teacher`, `title`, `content`, `action_date`, `enable`) VALUES
         ('{$name}','{$grade}', '{$class}','{$teacher}','{$title}', '{$content}', now(), '0' )";
 
-    //資料庫新增文章之前進行驗證碼檢查
-    // include_once XOOPS_ROOT_PATH . "/class/xoopsformloader.php";
-    // xoops_load('captcha');
-    // $xoopsCaptcha = XoopsCaptcha::getInstance();
-    // $xoopsCaptcha->setConfig('skipmember' , false);
-    // if(!$xoopsCaptcha->verify()) {
-    //     redirect_header($_SERVER['PHP_SELF'], 5, $xoopsCaptcha->getMessage());
-    // }
 
     $xoopsDB->queryF($sql) or web_error($sql);
     $article_id = $xoopsDB->getInsertId();
