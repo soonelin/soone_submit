@@ -4,7 +4,7 @@ $modversion = array();
 //---模組基本資訊---//
 $modversion['name']        = '網路投稿';
 $modversion['version']     = 1.00;
-$modversion['description'] = '學生網路投稿使用';
+$modversion['description'] = '學生網路投稿';
 $modversion['author']      = '林順宜';
 $modversion['credits']     = '相關有功人員';
 $modversion['help']        = 'page=help';
@@ -14,9 +14,9 @@ $modversion['image']       = 'images/logo.png';
 $modversion['dirname']     = basename(dirname(__FILE__));
 
 //---模組狀態資訊---//
-$modversion['release_date']        = '2017/09/15';
-$modversion['module_website_url']  = 'http://模組官網網址';
-$modversion['module_website_name'] = '模組官網名稱';
+$modversion['release_date']        = '2018/08/03';
+$modversion['module_website_url']  = 'http://submit.raes.tn.edu.tw/index.php';
+$modversion['module_website_name'] = '網路投稿';
 $modversion['module_status']       = 'release';
 $modversion['author_website_url']  = 'http://作者網站網址';
 $modversion['author_website_name'] = '作者網站名稱';
@@ -104,14 +104,6 @@ $modversion['config'][$i]['formtype']    = 'yesno';
 $modversion['config'][$i]['valuetype']   = 'int';
 $modversion['config'][$i]['default']    = '0';
 
-//發布密碼form_pass偏好設定
-// $i++;
-// $modversion['config'][$i]['name']        = 'form_passwd';
-// $modversion['config'][$i]['title']       = '_MI_SOONE_SUBMIT_FORM_PASS_TITLE';
-// $modversion['config'][$i]['description'] = '_MI_SOONE_SUBMIT_FORM_PASS_DESC';
-// $modversion['config'][$i]['formtype']    = 'textbox';
-// $modversion['config'][$i]['valuetype']   = 'text';
-// $modversion['config'][$i]['default']    = '';
 
 //---搜尋---//
 $modversion['hasSearch']      = 1;
