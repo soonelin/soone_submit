@@ -1,5 +1,5 @@
 <{if $op=="list_article" or $op=="list_article_confirm"}>
-<div class="container-fluid"><h2>投稿總覽 <small>-投稿自今共累積<{$total}>篇文章</small></h2>
+<div class="container-fluid"><h2>投稿總覽 <small>-目前共投稿了<{$total}>篇文章</small></h2>
   <table class="table table-hover table-bordered table-striped">
       <tr class="info" >
         <!-- <th class="text-center">審查</th> -->
