@@ -190,7 +190,6 @@ switch ($op) {
     case "edit_article":
         edit_article();
         redirect_header("index.php?op=show_article&article_id={$article_id}", 5, "文章編號{$article_id}修改成功!");
-        // header("location: index.php?op=show_article&article_id={$article_id}");
         exit;
 
     case "tufdl":

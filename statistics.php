@@ -21,7 +21,6 @@ function show_grade_enable_stastic()
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
         $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year+1));
 
-        
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`enable`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `enable`='1' AND `action_date` 
         BETWEEN '{$this_year_0701}' AND '{$next_year_0229}' GROUP BY `grade`,`class` ORDER BY `grade`,`class` ";
@@ -39,7 +38,6 @@ function show_grade_enable_stastic()
  
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year-1));
         $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year));
-
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`enable`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `enable`='1' AND `action_date` 
@@ -105,7 +103,6 @@ function show_grade_confirm_stastic()
 
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
         $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year+1));
-
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`confirm`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `confirm`='1' AND `action_date` 
@@ -161,7 +158,6 @@ function list_article_random(){
     global $xoopsDB, $xoopsTpl;
 
     $tbl = $xoopsDB->prefix('soone_submit');
-    // $sql = "SELECT * FROM `{$tbl}` WHERE `enable`='1' ORDER BY `article_id` DESC LIMIT 5";
     $sql = "SELECT * FROM `{$tbl}` WHERE `enable`='1' ORDER BY RAND() limit 10";
     $result = $xoopsDB->query($sql) or web_error($sql);
     while ($main = $xoopsDB->fetchArray($result)) {
@@ -198,7 +194,6 @@ function list_article(){
         $main['title']   = $myts->htmlSpecialChars($main['title']);
         $main['content'] = $myts->displayTarea($main['content'], 1, 1, 1, 1, 0);
 
-        // $main['action_date'] = date("Y-m-d",$main['action_date']);
         $mains[] = $main;
     }
     $xoopsTpl->assign('content', $mains);
