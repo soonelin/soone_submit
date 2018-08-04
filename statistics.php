@@ -19,7 +19,7 @@ function show_grade_enable_stastic()
         $Year  = date('Y') ;
 
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
-        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 15, $Year+1));
+        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 12, 30, $Year+1));
 
         
         //grade_sum統計各年級的數量變數
@@ -38,7 +38,7 @@ function show_grade_enable_stastic()
         $Year  = date('Y') ;
  
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year-1));
-        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 15, $Year));
+        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year));
 
         
         //grade_sum統計各年級的數量變數
@@ -53,7 +53,7 @@ function show_grade_enable_stastic()
         $con_date2 = $next_year_0215;
         $period = "上學期";
         
-    //月份從03至08月是下學期
+    //月份從03至06月是下學期
     }elseif(date('m')>=3 and date('m')<=6){
         $Year  = date('Y') ;
 
@@ -99,12 +99,12 @@ function show_grade_confirm_stastic()
     $tbl = $xoopsDB->prefix('soone_submit');
 
     //判斷上下學期
-    //月份從09至隔年02月是上學期
-    if (date('m')>=9 OR date('m')<=2){
+    //月份從07至隔年02月是上學期
+    if (date('m')>=7 and date('m')<=12){
         $Year  = date('Y') ;
 
-        $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 8, 1, $Year-1));
-        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 15, $Year));
+        $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
+        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 12, 30, $Year+1));
 
         
         //grade_sum統計各年級的數量變數
@@ -119,11 +119,11 @@ function show_grade_confirm_stastic()
         $con_date2 = $next_year_0215;
         $period = "上學期";
 
-    //月份從03至08月是下學期
-    }elseif(date('m')>=3 AND date('m')<=8){
+    //月份從03至06月是下學期
+    }elseif(date('m')>=3 AND date('m')<=6){
         $Year  = date('Y') ;
         $next_year_0301 =  date("Y-m-d",mktime(0, 0, 0, 3, 1, $Year));
-        $next_year_0630 =  date("Y-m-d",mktime(0, 0, 0, 7, 31, $Year));
+        $next_year_0630 =  date("Y-m-d",mktime(0, 0, 0, 6, 30, $Year));
         
         $sql = "SELECT `grade`,`class`,`teacher`,`confirm`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `confirm`='1' AND `action_date` 
         BETWEEN '{$next_year_0301}' AND '{$next_year_0630}' GROUP BY `grade`,`class` ORDER BY `grade`,`class`";
