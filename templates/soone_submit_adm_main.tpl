@@ -1,9 +1,9 @@
 <{if $op=="list_article"}>
-  <div class="container"><h2>投稿總數：<{$total}>、入選總數：<{$confirm_num}>、尚未審查：<{$unreview_num}> </h2>
+  <div class="container"><h2>投稿總數：<{$total}>、優選總數：<{$confirm_num}>、尚未審查：<{$unreview_num}> </h2>
     <table class="table table-bordered table-striped">
         <tr class="info">
           <th>編號</th>
-          <th>審查</th>
+          <th>評選</th>
           <th>日期</th>
           <th>姓名</th>
           <th>年級</th>
@@ -15,18 +15,33 @@
     <{foreach from=$content item=content}>
         <tr>
           <td><{$content.article_id}></td>
-          <td><{if $content.confirm=="1" }>優選<{/if}></td>
-          <td><{$content.action_date}></td>
-          <td><{$content.name}></td>
-          <td><{$content.grade}></td>
-          <td><{$content.class}></td>
+          <td>
+            <{if $content.confirm=="1" }>
+              <span class="label label-danger">優選</span>
+            <{/if}>
+          </td>
+          <td>
+            <{$content.action_date}>
+          </td>
+          <td>
+            <{$content.name}>
+          </td>
+          <td>
+            <{$content.grade}>
+          </td>
+          <td>
+            <{$content.class}>
+          </td>
           <td>
             <a href="main.php?op=show_article&article_id=<{$content.article_id}>" ><{$content.title}></a>
           </td>
-          <td><{$content.teacher}></td>
           <td>
-              <a href="../post.php?article_id=<{$content.article_id}>" class="btn btn-primary btn-xs">修改</a>
+            <{$content.teacher}>
+          </td>
+          <td>
               <a href="./main.php?op=review_article&article_id=<{$content.article_id}>" class="btn btn-warning btn-xs">審查</a>
+              <a href="../post.php?article_id=<{$content.article_id}>" class="btn btn-primary btn-xs">修改</a>
+            
             <!-- 若是管理者才予以開通刪除與入選管理功能-->
             <{if $xoops_isadmin}>
               <a href="javascript:del_article(<{$content.article_id}>)" class="btn btn-danger btn-xs">刪除</a>
@@ -39,11 +54,10 @@
     </table>
 
 <{elseif $op=="unreview_article"}>
-  <div class="container"><h2>投稿總數：<{$total}> 尚未審查：<{$unreview_num}> </h2>
+  <div class="container"><h2>尚未審查：<{$unreview_num}> </h2>
     <table class="table table-bordered table-striped">
         <tr class="info">
           <th>編號</th>
-          <th>審查</th>
           <th>日期</th>
           <th>姓名</th>
           <th>年級</th>
@@ -54,21 +68,28 @@
         </tr>
       <{foreach from=$content item=content}>
         <tr>
-          <td><{$content.article_id}></td>
-          <td><{if $content.confirm=="1" }>優選<{/if}></td>
-          <td><{$content.action_date}></td>
-          <td><{$content.name}></td>
-          <td><{$content.grade}></td>
-          <td><{$content.class}></td>
           <td>
-        <a href="main.php?op=show_article&article_id=<{$content.article_id}>" ><{$content.title}></a>
+            <{$content.article_id}>
           </td>
           <td>
-        <{$content.teacher}>
+            <{$content.action_date}>
           </td>
           <td>
-              <a href="javascript:del_article(<{$content.article_id}>)" class="btn btn-danger btn-xs">刪除</a>
-              <a href="../post.php?article_id=<{$content.article_id}>" class="btn btn-primary btn-xs">修改</a>
+            <{$content.name}>
+          </td>
+          <td>
+            <{$content.grade}>
+          </td>
+          <td>
+            <{$content.class}>
+          </td>
+          <td>
+            <a href="main.php?op=show_article&article_id=<{$content.article_id}>" ><{$content.title}></a>
+          </td>
+          <td>
+            <{$content.teacher}>
+          </td>
+          <td>
               <a href="./main.php?op=review_article&article_id=<{$content.article_id}>" class="btn btn-warning btn-xs">審查</a>
           </td>
         </tr>
@@ -92,7 +113,7 @@
       </div>
     </div>
     </div>
-  <{ else }>
-    <{$post_form}>
-  <{/if}>
-  <{$bar}>
+<{ else }>
+  <{$post_form}>
+<{/if}>
+<{$bar}>
