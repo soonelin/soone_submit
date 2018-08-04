@@ -1,6 +1,6 @@
 <?php
 
-//列出投稿最多者
+//列出投稿最多的學生前十名
 function list_sum_editor($options)
 {
     global $xoopsDB, $xoopsTpl;

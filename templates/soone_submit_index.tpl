@@ -2,7 +2,7 @@
 <div class="container-fluid"><h2>投稿總覽 <small>-目前共投稿了<{$total}>篇文章</small></h2>
   <table class="table table-hover table-bordered table-striped">
       <tr class="info" >
-        <!-- <th class="text-center">審查</th> -->
+        <th class="text-center">審查</th>
         <th class="text-center">日期</th>
         <th class="text-center">姓名</th>
         <th class="text-center">年級</th>
@@ -12,11 +12,12 @@
       </tr>
     <{foreach from=$content item=content}>
       <tr>
-        <!-- 從變數判斷是否入選 -->
-          <!-- <td class="text-center">
-            <{if $content.confirm=="1" }><span class="label label-danger">優選</span>
-              <{/if}>
-          </td> -->
+        <!-- 從判斷是否為優選文章 -->
+          <td class="text-center">
+            <{if $content.confirm=="1" }>
+              <span class="label label-danger">優選</span>
+            <{/if}>
+          </td>
           <td>
             <{$content.action_date}>
           </td>
@@ -40,13 +41,14 @@
   </table>
   <{$bar}>
 </div>
+
 <!-- 文章隨選 -->
 <div class="container-fluid">
   <h2>文章隨選</h2>
   <table class="table table-hover table-bordered table-striped">
     <thead>
       <tr class="success">
-        <!-- <th>審查</th> -->
+        <th>審查</th>
         <th>日期</th>
         <th>姓名</th>
         <th>年級</th>
@@ -57,11 +59,11 @@
     </thead>
     <{foreach from=$list_random item=list_random}>
       <tr>
-        <!-- <td class="text-center">
+        <td class="text-center">
           <{if $list_random.confirm=="1" }>
             <span class="label label-danger">優選</span>
-            <{/if}>
-        </td> -->
+          <{/if}>
+        </td> 
         <td>
           <{$list_random.action_date}>
         </td>

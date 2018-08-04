@@ -1,5 +1,5 @@
 <?php
-//區塊主函數：列出所有文章
+//列出全部尚未審查文章
 function list_unreview()
 {
     global $xoopsDB;

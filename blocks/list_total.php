@@ -1,5 +1,5 @@
 <?php
-//區塊主函數：列出所有文章
+//列出全部審查完文章
 function list_total()
 {
     global $xoopsDB;

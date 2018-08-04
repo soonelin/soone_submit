@@ -14,8 +14,8 @@ $interface_menu['我要投稿'] = "post.php";
 $interface_icon['我要投稿'] = "fa-pencil";
 
 //列出文章
-$interface_menu['入選文章'] = "index.php?op=list_article_confirm";
-$interface_icon['入選文章']    = "fa-book ";
+$interface_menu['優選文章'] = "index.php?op=list_article_confirm";
+$interface_icon['優選文章']    = "fa-book ";
 
 //列出本學期投稿
 $interface_menu['統計列表'] = "statistics.php";

@@ -1,5 +1,5 @@
 <?php
-//區塊主函數：列出各年段班別所有文章
+//列出各年段班別所有文章
 function list_grade_sum(){
 
     global $xoopsDB;

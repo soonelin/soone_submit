@@ -1,6 +1,6 @@
 <?php
 
-//列出投稿最多者
+//列出指導老師前十名
 function list_sum_teacher($options)
 {
     global $xoopsDB, $xoopsTpl;

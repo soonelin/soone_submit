@@ -1,5 +1,5 @@
 <?php
-//區塊主函數：列出所報者
+//列出隨機五篇文章
 function list_random_article($options)
 {
     global $xoopsDB, $xoopsTpl;

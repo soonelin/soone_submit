@@ -153,7 +153,7 @@ function review_article($article_id)
 
 }
 
-//一鍵審查全文
+//一次審查通過全部文章
 function review_all_article()
 {
     global $xoopsDB;
@@ -162,7 +162,7 @@ function review_all_article()
     $xoopsDB->queryF($sql) or web_error($sql);
     
 }
-//審查是否刊登為入選
+//設定優選文章
 function confirm_article($article_id)
 {
     global $xoopsDB;
@@ -172,7 +172,7 @@ function confirm_article($article_id)
     $xoopsDB->queryF($sql) or web_error($sql);
 
 }
-//審查是否刊登為入選
+//取消優選文章
 function unconfirm_article($article_id)
 {
     global $xoopsDB;
@@ -183,7 +183,6 @@ function unconfirm_article($article_id)
 
 }
 
-// 
 
 /*-----------執行動作判斷區----------*/
 include_once $GLOBALS['xoops']->path('/modules/system/include/functions.php');
@@ -216,13 +215,13 @@ switch ($op) {
     case "confirm_article":
         $op = "confirm_article";
         confirm_article($article_id);
-        redirect_header("main.php", 5, "編號文章{$article_id}入選！");
+        redirect_header("main.php", 5, "設定編號文章{$article_id}為優選文章！");
         break;
 
     case "unconfirm_article":
         $op = "unconfirm_article";
         unconfirm_article($article_id);
-        redirect_header("main.php", 5, "編號文章{$article_id}取消入選！");
+        redirect_header("main.php", 5, "取消編號文章{$article_id}為優選文章！");
         break;
 
     case "review_all_article":

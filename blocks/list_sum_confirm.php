@@ -1,6 +1,6 @@
 <?php
 
-//列出投稿最多者
+//列出投稿優選最多的學生
 function list_sum_confirm($options)
 {
     global $xoopsDB, $xoopsTpl;
