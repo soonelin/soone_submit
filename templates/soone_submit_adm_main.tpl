@@ -92,7 +92,7 @@
     </div>
   </div>
   </div>
- <{else }>
+ <{ else }>
    <{$post_form}>
  <{/if}>
  <{$bar}>
