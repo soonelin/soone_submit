@@ -206,7 +206,7 @@ switch ($op) {
             post_form($article_id);
             
         }else{
-            redirect_header("index.php", 5, "投稿截止！");
+            redirect_header("index.php", 5, "現在不開放投稿，或是投稿截止了！");
         }
         break;
 }
