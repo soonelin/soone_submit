@@ -25,7 +25,7 @@
 <!-- 入選文章統計 -->
 <div class="container-fluid">
     <h3>
-        <{$Year}>年(<{$period}>)各年級入選文章統計<small>-目前共<{$show_grade_confirm_num}>篇文章
+        <{$Year}>年(<{$period}>)各年級入選文章統計<small>-目前共有<{$show_grade_confirm_num}>篇文章
             (<{$con_date1}>~<{$con_date2}>)</small>
     </h3>
     <table class="table table-hover table-striped">
