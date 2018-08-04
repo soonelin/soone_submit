@@ -6,7 +6,7 @@ include_once XOOPS_ROOT_PATH . "/header.php";
 // include_once XOOPS_ROOT_PATH . "/function.php";
 /*-----------function區--------------*/
 
-//列出各年段班別入選文章統計
+//列出各年段班別文章統計
 function show_grade_enable_stastic()
 {
 
@@ -104,7 +104,7 @@ function show_grade_confirm_stastic()
         $Year  = date('Y') ;
 
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
-        $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 30, $Year+1));
+        $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year+1));
 
         
         //grade_sum統計各年級的數量變數

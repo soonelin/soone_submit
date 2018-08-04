@@ -10,7 +10,7 @@
       <th>班級</th>
       <th>標題</th>
       <th>指導老師</th>
-      <th>功能</th>
+      <th>管理功能</th>
     </tr>
 <{foreach from=$content item=content}>
     <tr>
@@ -27,7 +27,7 @@
       <td>
           <a href="../post.php?article_id=<{$content.article_id}>" class="btn btn-primary btn-xs">修改</a>
           <a href="./main.php?op=review_article&article_id=<{$content.article_id}>" class="btn btn-warning btn-xs">審查</a>
-        <!-- 若是管理者才予以開通刪除與入選功能-->
+        <!-- 若是管理者才予以開通刪除與入選管理功能-->
         <{if $xoops_isadmin}>
           <a href="javascript:del_article(<{$content.article_id}>)" class="btn btn-danger btn-xs">刪除</a>
           <a href="./main.php?op=confirm_article&article_id=<{$content.article_id}>" class="btn btn-info btn-xs">入選</a>
@@ -50,7 +50,7 @@
       <th>班級</th>
       <th>標題</th>
       <th>指導老師</th>
-      <th>功能</th>
+      <th>管理功能</th>
     </tr>
   <{foreach from=$content item=content}>
     <tr>
