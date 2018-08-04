@@ -166,7 +166,7 @@ $modversion['blocks'][$i]['show_func']   = "list_grade_sum";
 $modversion['blocks'][$i]['template']    = "list_grade_sum.tpl";
 /*$modversion['blocks'][$i]['edit_func'] = "list_article_edit";
 $modversion['blocks'][$i]['options'] = "1|1";*/
-//列出最多文章入選學生前十名
+//列出最多文章優選學生前十名
 $i++;
 $modversion['blocks'][$i]['file']        = "list_sum_confirm.php";
 $modversion['blocks'][$i]['name']        = _MI_SOONE_SUBMIT_CONFIRM_SUM;
