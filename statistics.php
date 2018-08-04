@@ -19,38 +19,38 @@ function show_grade_enable_stastic()
         $Year  = date('Y') ;
 
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
-        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 12, 30, $Year+1));
+        $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year+1));
 
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`enable`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `enable`='1' AND `action_date` 
-        BETWEEN '{$this_year_0701}' AND '{$next_year_0215}' GROUP BY `grade`,`class` ORDER BY `grade`,`class` ";
+        BETWEEN '{$this_year_0701}' AND '{$next_year_0229}' GROUP BY `grade`,`class` ORDER BY `grade`,`class` ";
 
         //各年段班別投稿文章統計數量
-        $sql2 = "SELECT `name` FROM `{$tbl}` WHERE `enable`='1' AND `action_date` BETWEEN '{$this_year_0701}' AND '{$next_year_0215}' ";
+        $sql2 = "SELECT `name` FROM `{$tbl}` WHERE `enable`='1' AND `action_date` BETWEEN '{$this_year_0701}' AND '{$next_year_0229}' ";
 
         //輸出呈現目前的日期
         $con_date1 = $this_year_0701;
-        $con_date2 = $next_year_0215;
+        $con_date2 = $next_year_0229;
         $period = "上學期";
 
     }elseif(date('m')>=1 AND date('m')<=2){
         $Year  = date('Y') ;
  
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year-1));
-        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year));
+        $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 29, $Year));
 
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`enable`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `enable`='1' AND `action_date` 
-        BETWEEN '{$this_year_0701}' AND '{$next_year_0215}' GROUP BY `grade`,`class` ORDER BY `grade`,`class` ";
+        BETWEEN '{$this_year_0701}' AND '{$next_year_0229}' GROUP BY `grade`,`class` ORDER BY `grade`,`class` ";
 
         //各年段班別投稿文章統計數量
-        $sql2 = "SELECT `name` FROM `{$tbl}` WHERE `enable`='1' AND `action_date` BETWEEN '{$this_year_0701}' AND '{$next_year_0215}' ";
+        $sql2 = "SELECT `name` FROM `{$tbl}` WHERE `enable`='1' AND `action_date` BETWEEN '{$this_year_0701}' AND '{$next_year_0229}' ";
 
         //輸出呈現目前的日期
         $con_date1 = $this_year_0701;
-        $con_date2 = $next_year_0215;
+        $con_date2 = $next_year_0229;
         $period = "上學期";
         
     //月份從03至06月是下學期
@@ -104,19 +104,19 @@ function show_grade_confirm_stastic()
         $Year  = date('Y') ;
 
         $this_year_0701 =  date("Y-m-d",mktime(0, 0, 0, 7, 1, $Year));
-        $next_year_0215 =  date("Y-m-d",mktime(0, 0, 0, 12, 30, $Year+1));
+        $next_year_0229 =  date("Y-m-d",mktime(0, 0, 0, 2, 30, $Year+1));
 
         
         //grade_sum統計各年級的數量變數
         $sql = "SELECT `grade`,`class`,`teacher`,`confirm`,count(*) as 'grade_sum' FROM `{$tbl}` WHERE `confirm`='1' AND `action_date` 
-        BETWEEN '{$this_year_0701}' AND '{$next_year_0215}' GROUP BY `grade`,`class` ORDER BY `grade`,`class` ";
+        BETWEEN '{$this_year_0701}' AND '{$next_year_0229}' GROUP BY `grade`,`class` ORDER BY `grade`,`class` ";
 
         //各年段班別投稿文章統計數量
-        $sql2 = "SELECT `name` FROM `{$tbl}` WHERE `confirm`='1' AND `action_date` BETWEEN '{$this_year_0701}' AND '{$next_year_0215}' ";
+        $sql2 = "SELECT `name` FROM `{$tbl}` WHERE `confirm`='1' AND `action_date` BETWEEN '{$this_year_0701}' AND '{$next_year_0229}' ";
 
         //輸出呈現目前的日期
         $con_date1 = $this_year_0701;
-        $con_date2 = $next_year_0215;
+        $con_date2 = $next_year_0229;
         $period = "上學期";
 
     //月份從03至06月是下學期
